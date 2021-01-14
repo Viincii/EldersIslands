@@ -19,11 +19,15 @@
 					$this->mod->recupInfo();
 					$this->vue->afficheInfo();
 					break;
-				case 'connecte':
-					
+				case 'modif':
+					$this->vue->formChangMdp();
 					break;
-				case 'deco':
-					
+				case 'mdpCh':
+					$res = $this->mod->changMdp();
+					if($res == 0)
+						$this->vue->mdpVal();
+					else
+						$this->vue->pasModif();
 					break;
 				default:
 					break;

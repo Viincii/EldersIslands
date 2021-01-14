@@ -8,18 +8,18 @@
 			<h1>Elder's Island</h1>
 		</div>
 
-		<div id='test'>
-			<?php
-				$co = new ComposantConnexion();
-				$co->affiche();
-			?>
-		</div>
-
 		<div id='menu'>
 			<?php
 				include_once "Composants/CompMenu/ComposantMenu.php";
 				$menu = new ComposantMenu();
 				$menu->affiche();
+			?>
+		</div>
+
+		<div id='test'>
+			<?php
+				$co = new ComposantConnexion();
+				$co->affiche();
 			?>
 		</div>
 		<main>

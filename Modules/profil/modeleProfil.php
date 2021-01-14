@@ -31,6 +31,32 @@
 
 			}
 		}
+
+		function changMdp(){
+			$aMdp = hash("haval160,4", $_POST['aMdp']);
+			$mdp = $_POST['mdp'];
+			$cMdp = $_POST['cMdp'];
+			if($mdp!=$cMdp)
+				return 1;
+			$mdp= hash("haval160,4", $mdp);
+
+			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			if ($pseudo != NULL) {
+				try{
+					$res = self::$bdd-> prepare("SELECT MDP FROM utilisateur where PSEUDO =?;");
+					$res->execute(array($pseudo));
+					$result = $res->fetch();
+					if($aMdp!=$result['MDP'])
+						return 1;
+					$res = self::$bdd-> prepare("UPDATE utilisateur set MDP=? where PSEUDO =?;");
+					$res->execute(array($mdp,$pseudo));
+					return 0;
+				}
+				catch (PDOexception $eo){
+					echo $eo.getMessage().$eo.getCode();
+				}
+			}
+		}
 	}
 
 ?>
