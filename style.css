@@ -1,0 +1,30 @@
+	body{
+		background-color: rgb(130, 197, 252);
+	}
+
+	#Titre{
+		margin-left: 45%;
+	}
+
+	#test{
+		float: right;
+		background-color: white;
+	}
+
+	#menu{
+		margin-left: 20%;
+	}
+
+	.menu{
+		width: 5%;
+		border: 5px solid black;
+		margin-right: 5%;
+	}
+
+	.imageBestiaire{
+		display: inline-block;
+		width: 5%;
+		border: 5px solid black;
+		margin-right: 5%;
+	}
+
