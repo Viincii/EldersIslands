@@ -28,3 +28,59 @@
 		margin-right: 5%;
 	}
 
+	#profil{
+		position: absolute;
+		border: 2px black solid;
+		top: 25%;
+		left: 25%;
+		width: 25%;
+	}
+
+	#formCo{
+		position: absolute;
+		top: 20%;
+		left: 35%;
+		width: 32%;
+		height: 75%;
+		background: no-repeat url("Image/parchemin.png");
+		padding-left: 5%;
+		padding-top: 10%;
+	}
+
+	.titre{
+		font-size: 25px;
+		font-weight: bold;
+		border: solid grey 5px;
+		border-radius: 15px;
+		width: 65%;
+		text-align: center;
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	#formC{
+		font-size: 25px;
+		width: 65%;
+		text-align: center;
+		padding-top: 8%;
+	}
+
+	.textForm{
+		height: 25px;
+		width: 150px;
+		font-size: 22px;
+	}
+
+
+	#boutonConnexion{
+		font-size: 20px;
+		margin-top: 5%;
+		font-weight: bold;
+	}
+
+	#boutonInscription{
+		font-size: 20px;
+		margin-top: 5%;
+		margin-left: 9%;
+		font-weight: bold;
+	}
