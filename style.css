@@ -1,5 +1,6 @@
 	body{
-		background-color: rgb(130, 197, 252);
+		background: no-repeat url("Image/fond.jpg");
+		background-size: cover;
 	}
 
 	#Titre{
@@ -19,10 +20,17 @@
 		margin-left: 20%;
 	}
 
+	#blockMenu{
+		opacity: none;
+	}
+
 	.menu{
 		width: 5%;
 		border: 5px solid black;
+		border-radius: 15px;
 		margin-right: 5%;
+		background-color: lightgrey;
+		opacity: none;
 	}
 
 	.imageBestiaire{
@@ -80,8 +88,16 @@
 
 	#boutonConnexion{
 		font-size: 20px;
-		margin-top: 5%;
+		margin-top: 10%;
 		font-weight: bold;
+		border: 1px solid grey;
+		border-radius: 15px;
+		background-color: bisque;
+	}
+
+	#boutonConnexion:hover{
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		border: 3px solid green;
 	}
 
 	#boutonInscription{
@@ -89,6 +105,14 @@
 		margin-top: 5%;
 		margin-left: 9%;
 		font-weight: bold;
+		border: 1px solid grey;
+		border-radius: 15px;
+		background-color: bisque;
+	}
+
+	#boutonInscription:hover{
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		border: 3px solid green;
 	}
 
 	#avatars{
@@ -128,7 +152,7 @@
 	.butP{
 		margin-top: 30px;
 		font-size: large;
-		border: 5px solid aqua;
+		border: 5px solid lightblue;
 		background: none;
 		color: white;
 		border-radius: 25px;
@@ -136,7 +160,7 @@
 	}
 
 	.butP:hover{
-		background-color: aqua;
+		background-color: lightblue;
 		color: black;
 		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
