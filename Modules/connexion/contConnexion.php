@@ -19,8 +19,9 @@
 					$this->vue->bienvenue();
 					break;
 				case 'connecte':
-					$this->idSession = $_POST['pseudo'];
-					$i = $this->mod->Con();
+					$this->idSession = isset($_POST['pseudo'])?$_POST['pseudo']:NULL;
+					if($this->idSession !=NULL)
+						$i = $this->mod->Con();
 					break;
 				case 'deco':
 					$id=isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
