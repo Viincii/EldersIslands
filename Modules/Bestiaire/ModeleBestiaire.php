@@ -6,6 +6,7 @@
 		
 		public function rechercheImageCréa(){
 			try{
+
 				$res = self::$bdd-> prepare("select IDC, IMAGE from crea;");
 				$res->execute();
 				$result = $res->fetchAll();
@@ -28,6 +29,7 @@
 			catch (PDOexception $eo){
 				echo $eo.getMessage().$eo.getCode();
 			}
+
 		}		
 	}
 
