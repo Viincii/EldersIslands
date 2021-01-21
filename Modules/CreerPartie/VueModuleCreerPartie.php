@@ -16,8 +16,8 @@
 			echo "</div>";
 		}
 
-		function afficheRejoindrePartie($id){
-			echo "<div id='bouton'><a href=index.php?module=Jouer&action=Partie&id=".$id.">Rejoindre Partie</a>";
+		function afficheRejoindrePartie($id, $numéroJoeur){
+			echo "<div id='bouton'><a href=index.php?module=Jouer&action=Partie&id=".$id."&J=".$numéroJoeur.">Rejoindre Partie</a>";
 		}
 	}
  ?>

@@ -7,7 +7,7 @@
 			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
-					$res = self::$bdd-> prepare("SELECT NIVEAU,POINTS, IDGuilde, Avatar FROM utilisateur where PSEUDO =?;");
+					$res = self::$bdd-> prepare("SELECT NIVEAU,POINTS, IDGuilde FROM utilisateur where PSEUDO =?;");
 					$res->execute(array($pseudo));
 					$result = $res->fetch();
 					$_POST['niveau'] = $result['NIVEAU'];
@@ -23,12 +23,7 @@
 					else{
 						$_POST['nomG'] = NULL;
 						$_POST['descG'] = NULL;
-					}
-					if($result['Avatar']==NULL)
-						$avatar = "Image/cat.png";
-					else
-						$avatar= $result['Avatar'];
-					$_SESSION['avatar'] = $avatar;
+					}	
 				}
 				catch (PDOexception $eo){
 					echo $eo.getMessage().$eo.getCode();

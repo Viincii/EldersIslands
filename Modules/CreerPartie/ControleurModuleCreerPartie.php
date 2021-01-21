@@ -19,16 +19,18 @@
 						break;
 					case 'CreerPartie':
 						$this->modele->créerPartie();
-						$this->vue->afficheRejoindrePartie($this->modele->chercherBonnePartie());
+						$this->vue->afficheRejoindrePartie($this->modele->chercherBonnePartie(), $this->modele->numéroJoueur());
 						break;
 					case 'RecherchePartie':
 						$this->vue->affichePartie($this->modele->chercherPartie());
 						break;
 					case 'LancerPartie':
 						$this->modele->lancerPartie($_GET['id']);
-						$this->vue->afficheRejoindrePartie($_GET['id']);
+						$this->vue->afficheRejoindrePartie($_GET['id'], $this->modele->numéroJoueur());
 						break;
 					case 'Partie':
+						include_once "Modules/Partie/ModulePartie.php";
+						new ModulePartie();
 						break;	
 					default:
 						break;

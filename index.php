@@ -5,16 +5,23 @@
 	include_once "vue_generique.php";
 	$co = new Connexion();
 	$co->initConnexion();
-
+	
 	if(!isset($_GET['action'])){
-        $_GET['action']= 'init';
-    }
+        $_GET['action']= 'default';
+	}
+	
     if(!isset($_GET['module'])){
         $_GET['module']= 'init';
 	}
+
+	if(!isset($_GET['message'])){
+		$_GET['message']= 'default';
+	}
+	
 	if(!isset($_GET['amis'])){
         $_GET['amis']= 'init';
     }
+
 	switch($_GET['module']){
 		case 'connexion':
 			include_once "Modules/connexion/mod_connexion.php";
@@ -50,4 +57,5 @@
 	include_once "Modules/Amis/mod_amis.php";
 	new Mod_Amis();
 	include "template.php";
+	
 ?>	

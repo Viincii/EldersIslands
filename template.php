@@ -2,17 +2,19 @@
 	<head>
 		<meta charset="utf-8"/>
         <link rel="stylesheet" href="style.css">
-	</head>
+	</head>	
 	<body>
 		<?php
-			$co = new ComposantConnexion();
-			$co->affiche();
+			if(isset($_SESSION['id'])){
+				echo "<input type='text' id='idJoueur' value=".$_SESSION['id']." hidden />";
+			}	
 		?>
 		<div id='menu'>
 			<?php
-				include_once "Composants/CompMenu/ComposantMenu.php";
-				$menu = new ComposantMenu();
-				$menu->affiche();
+				if($_GET['module']!="Jouer"){
+					include_once "Composants/CompMenu/ComposantMenu.php";
+					$menu = new ComposantMenu();
+				}
 			?>
 		</div>
 
@@ -33,4 +35,5 @@
 	</body>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="Tchat.js"></script>
+	<script src="Modules/Partie/Script.js"></script>
 </html>

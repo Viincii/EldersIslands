@@ -1,5 +1,4 @@
 <?php
-	class
 	$test = new PDO("mysql:host=localhost;dbname=elder's island", "root", "");
 	$Env = $_POST['Envo'];
 	echo $Env;
