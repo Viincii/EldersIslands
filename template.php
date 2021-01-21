@@ -4,10 +4,10 @@
         <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id='Titre'>
-			<h1>Elder's Island</h1>
-		</div>
-
+		<?php
+			$co = new ComposantConnexion();
+			$co->affiche();
+		?>
 		<div id='menu'>
 			<?php
 				include_once "Composants/CompMenu/ComposantMenu.php";
@@ -23,7 +23,14 @@
 			?>
 		</div>
 		<main>
-				
 		</main>
+			<?php
+				if(isset($_SESSION['id'])){
+					include_once "Modules/Tchat/ModuleTchat.php";
+					$mess = new ModuleTchat();
+				}
+			?>
 	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="Tchat.js"></script>
 </html>

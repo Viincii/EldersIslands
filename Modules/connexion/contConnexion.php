@@ -19,11 +19,11 @@
 					$this->vue->bienvenue();
 					break;
 				case 'connecte':
-					$this->idSession = $_POST['id'];
-					$i = $this->mod->testCon();
+					$this->idSession = $_POST['pseudo'];
+					$i = $this->mod->Con();
 					break;
 				case 'deco':
-					$id=isset($_SESSION['id'])?$_SESSION['id']:NULL;
+					$id=isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 					session_unset();
 					$this->mod->deco($id);
 					break;
@@ -32,7 +32,7 @@
 			}
 		}
 		public function estCo(){
-			if(!isset($_SESSION['id'])&& $this->action == 'connecte'){
+			if(!isset($_SESSION['pseudo'])&& $this->action == 'connecte'){
 				$this->vue->refusCon();
 			}
 		}
