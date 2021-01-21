@@ -1,0 +1,31 @@
+	body{
+		/*background-color: rgb(130, 197, 252);*/
+		background-color: #7ba47b;
+	}
+
+	#Titre{
+		margin-left: 45%;
+	}
+
+	#test{
+		float: right;
+		background-color: #ffffff;
+	}
+
+	#menu{
+		margin-left: 20%;
+	}
+
+	.menu{
+		width: 5%;
+		border: 5px solid black;
+		margin-right: 5%;
+	}
+
+	.imageBestiaire{
+		display: inline-block;
+		width: 5%;
+		border: 5px solid #000000;
+		margin-right: 5%;
+	}
+
