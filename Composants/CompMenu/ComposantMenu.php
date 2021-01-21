@@ -7,7 +7,9 @@
 		}
 
 		function affiche(){
-			$this->cont->affiche();
+			if($_GET['action']!='Partie'){
+				$this->cont->affiche();
+			}
 		}
 	}
 ?>

@@ -20,7 +20,7 @@
 
 		public function chercherPartie(){
 			try{
-				$res = self::$bdd-> prepare("select IDP from partie where IDD2 IS NULL;");
+				$res = self::$bdd-> prepare("select IDP from partie where IDD2 IS NULL and FIN IS NULL;");
 				$res->execute();
 				$result = $res->fetchAll();
 				return $result;
@@ -50,7 +50,8 @@
 				$verif1 = self::$bdd->prepare("Select ID from utilisateur where pseudo = ?");
 				$verif1->execute(array($_SESSION['id']));
 				$Joueur = $verif1->fetch();
-				$res = self::$bdd-> prepare("select IDP from partie where IDD1=? ");
+
+				$res = self::$bdd-> prepare("select IDP from partie where IDD1=? and FIN IS NULL;");
 				$res->execute(array($Joueur['ID']));
 				$result = $res->fetch();
 				return $result['IDP'];
@@ -58,6 +59,22 @@
 
 			catch (PDOexception $eo){
 				echo $eo.getMessage().$eo.getCode();
+			}
+		}
+		
+		public function numéroJoueur(){
+			$verif1 = self::$bdd->prepare("Select ID from utilisateur where pseudo = ?");
+			$verif1->execute(array($_SESSION['id']));
+			$Joueur = $verif1->fetch();
+
+			$res = self::$bdd->prepare("select IDD1 from partie where IDD1=? and FIN IS NULL;");
+			$res->execute(array($Joueur['ID']));
+			$result = $res->fetch();
+
+			if($result['IDD1'] == null){
+				return 2;
+			}else{
+				return 1;
 			}
 		}
 	}
