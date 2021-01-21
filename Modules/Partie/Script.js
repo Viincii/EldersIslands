@@ -86,5 +86,5 @@ $(document).ready(function(){
 
     setInterval(checkHP, 250);
     setInterval(checkTour, 250);
-    setInterval(checkVictoire, 250);
+    //setInterval(checkVictoire, 250);
 });

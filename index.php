@@ -7,7 +7,7 @@
 	$co->initConnexion();
 	
 	if(!isset($_GET['action'])){
-        $_GET['action']= 'default';
+        $_GET['action']= 'init';
 	}
 	
     if(!isset($_GET['module'])){
