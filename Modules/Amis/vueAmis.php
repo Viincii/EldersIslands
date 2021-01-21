@@ -31,19 +31,18 @@
         function formAjout(){
             echo '<div id="listeAmis">';
             if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')
-                echo "<form action='index.php?amis=valAjout' method='post'id=''>
+                echo "<form action='index.php?amis=valAjout' method='post'id='formAjout'>
                 <label for='pseudo'>Entrez le pseudo du joueur (il ne sera pas ajouté si le compte c'est pas créé) :</label><input type='text' name='pseudoAmi'><br>
-                <input type='submit' value='Ajoutez' id='boutonAjout'>
-                </form>
+                <input type='submit' value='Ajoutez' id='ajoutA'>
+                </form></div>
                 <a href='index.php?amis=init'><div id='listeApparente'></div></a>";
             else
-                echo "<form action='".$_SERVER['REQUEST_URI']."&amis=valAjout' method='post'id=''>
-                <label for='pseudo'>Entrez le pseudo du joueur :</label><input type='text' name='pseudoAmi'><br>
-                <input type='submit' value='Ajoutez' id='boutonAjout'>
-                </form>
+                echo "<form action='".$_SERVER['REQUEST_URI']."&amis=valAjout' method='post'id='formAjout'>
+                <label for='pseudo'>Entrez le pseudo du joueur (il ne sera pas ajouté si le compte c'est pas créé) :</label><input type='text' name='pseudoAmi' id='inputJ'><br>
+                <input type='submit' value='Ajoutez' id='ajoutA'>
+                </form></div>
                 <a href='".$_SERVER['REQUEST_URI']."&amis=init'><div id='listeApparente'></div></a>";
             
-            echo '</div>';
         }
 	}
 ?>
