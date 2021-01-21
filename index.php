@@ -3,7 +3,7 @@
 	include_once "connexion.php";
 	include_once "Composants/CompConnexion/ComposantConnexion.php";
 	include_once "vue_generique.php";
-	
+
 	$co = new Connexion();
 	$co->initConnexion();
 
@@ -13,6 +13,7 @@
     if(!isset($_GET['module'])){
         $_GET['module']= 'init';
     }
+
 	
 	switch($_GET['module']){
 		case 'connexion':
@@ -28,10 +29,15 @@
 			new Mod_Insription();
 		case 'profil':
 			include_once "Modules/profil/mod_profil.php";
-			new Mod_Profil();				
-		default:
+			new Mod_Profil();	
 			break;
-			
+		case 'Jouer':
+			include_once "Modules/CreerPartie/ModuleCreerPartie.php";
+			new ModuleCreerPartie();		
+			break;	
+		default:
+			break;	
 	}
+				
 	include "template.php";
 ?>	

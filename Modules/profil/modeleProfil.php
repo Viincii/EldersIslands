@@ -29,7 +29,6 @@
 					else
 						$avatar= $result['Avatar'];
 					$_SESSION['avatar'] = $avatar;
-					
 				}
 				catch (PDOexception $eo){
 					echo $eo.getMessage().$eo.getCode();

@@ -26,6 +26,71 @@
 	}
 
 	.imageBestiaire{
+		width: 27%;
+		border: 5px solid black;
+		margin-right: 2%;
+		margin-top: 2%;
+	}
+
+	.imageBestiaire:hover{
+		opacity: 0.33;
+	}
+
+	#bestiaire{
+		background: no-repeat url("Image/livre.png");
+		position: absolute;
+		width: 38%;
+		height: 55%;
+		top: 25%;
+		left: 25%;
+		padding-top: 4%;
+		padding-left: 3.5%;
+	}
+
+	#imageCrea{
+		display: inline-block;
+		width: 15%;
+		border: 5px solid black;
+	}
+
+	#carac{
+		display: inline-block;
+		position: absolute;
+		margin-left: 1%;
+	}
+
+	#description{
+		display: inline-block;
+		position: absolute;
+		width: 40%;
+		margin-left: 28%;
+	}
+
+	#page0{
+		display: inline-block;
+		width: 42%;
+		height: 80%;
+		margin-right: 10%;
+	}
+
+	#page1{
+		position: absolute;
+		display: inline-block;
+		width: 38%;
+		height: 80%;
+	}
+
+	#Tchat{
+		background-color: white;
+		position: absolute;
+		left: 84.5%;
+		top: 65%;
+		border: 2px solid black;
+		width: 15%;
+		height: 30%;
+
+	}
+
 		display: inline-block;
 		width: 5%;
 		border: 5px solid black;
