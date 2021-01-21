@@ -4,10 +4,10 @@
 		}
 		
 		function afficheInfo(){
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				echo "<div id='profil'><img src=".$_SESSION['avatar']." class='imgAvaP'>
-					<div id='textP'>".$_SESSION['id']."<br/>
+					<div id='textP'>".$_SESSION['pseudo']."<br/>
 					Niveau : ".$_POST['niveau']."<br/>
 					Points : ".$_POST['points']."<br/>";
 				if($_POST['nomG']!= NULL){
