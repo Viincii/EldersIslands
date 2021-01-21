@@ -17,7 +17,6 @@
 		text-decoration: none;
 		color: rgb(253, 253, 253);
 	}
-
 	#menu{
 		margin-left: 20%;
 	}
@@ -121,11 +120,6 @@
 
 	}
 
-		display: inline-block;
-		width: 5%;
-		border: 5px solid black;
-		margin-right: 5%;
-	}
 
 	#profil{
 		position: absolute;

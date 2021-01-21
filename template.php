@@ -8,6 +8,7 @@
 			$co = new ComposantConnexion();
 			$co->affiche();
 		?>
+		
 		<div id='menu'>
 			<?php
 				include_once "Composants/CompMenu/ComposantMenu.php";
@@ -16,12 +17,7 @@
 			?>
 		</div>
 
-		<div id='test'>
-			<?php
-				$co = new ComposantConnexion();
-				$co->affiche();
-			?>
-		</div>
+		
 		<main>
 		</main>
 			<?php
