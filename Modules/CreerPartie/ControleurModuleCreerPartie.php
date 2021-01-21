@@ -14,7 +14,7 @@
 		function trieAction(){
 			if(isset($_GET['action'])){
         		switch($_GET['action']){
-					case 'default':
+					case 'init':
 						$this->vue->afficheMenu();
 						break;
 					case 'CreerPartie':
