@@ -4,16 +4,17 @@
 		}	
 		
 		public function Con(){
-			$id = $_POST['id'];
+			$pseudo = $_POST['pseudo'];
 			$mdp = hash("haval160,4", $_POST['mdp']);
 			try{
-				$res = self::$bdd-> prepare("SELECT MDP, Avatar FROM utilisateur where PSEUDO =?;");
-				$res->execute(array($id));
+				$res = self::$bdd-> prepare("SELECT ID, MDP, Avatar FROM utilisateur where PSEUDO =?;");
+				$res->execute(array($pseudo));
 				$result = $res->fetch();
 				if($mdp == $result['MDP']){
-					$_SESSION['id'] = $id;
+					$_SESSION['pseudo'] = $pseudo;
+					$_SESSION['id'] = $result['ID'];
 					$upCo= self::$bdd -> prepare("UPDATE utilisateur SET CONNECTE=1 WHERE PSEUDO=?;");
-					$upCo->execute(array($id));
+					$upCo->execute(array($pseudo));
 					$_SESSION['avatar']= $result['Avatar'];
 					return true;
 				}

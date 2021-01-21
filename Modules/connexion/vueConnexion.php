@@ -4,7 +4,7 @@
 		}
 		public function form(){
 			echo '<form action="index.php?module=connexion&action=connecte" method="post" id="formC">
-					<label for="id">Nom d\'utilisateur :</label><input type="text" name="id" class="textForm"><br>
+					<label for="id">Nom d\'utilisateur :</label><input type="text" name="pseudo" class="textForm"><br>
 					<label for="mdp">Mot de passe :</label><input type="password" name="mdp" class="textForm" size="24"><br>
 					<input type="submit" value="Connexion" id="boutonConnexion">
 				</form>

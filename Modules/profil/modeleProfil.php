@@ -4,7 +4,7 @@
 		}	
 		
 		function recupInfo(){
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
 					$res = self::$bdd-> prepare("SELECT NIVEAU,POINTS, IDGuilde, Avatar FROM utilisateur where PSEUDO =?;");
@@ -45,7 +45,7 @@
 				return 1;
 			$mdp= hash("haval160,4", $mdp);
 
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
 					$res = self::$bdd-> prepare("SELECT MDP FROM utilisateur where PSEUDO =?;");
@@ -76,7 +76,7 @@
 					break;
 			}
 
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
 					$res = self::$bdd-> prepare("UPDATE utilisateur set Avatar=? where PSEUDO =?;");

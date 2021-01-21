@@ -28,9 +28,16 @@
 		case 'inscription':
 			include_once "Modules/inscription/mod_inscription.php";
 			new Mod_Insription();
+			break;
 		case 'profil':
 			include_once "Modules/profil/mod_profil.php";
-			new Mod_Profil();	
+			new Mod_Profil();
+			break;
+		case 'Guilde':
+			include_once "Modules/guilde/mod_guilde.php";
+			new Mod_Guilde();
+			break;			
+		default:
 			break;
 		case 'Jouer':
 			include_once "Modules/CreerPartie/ModuleCreerPartie.php";
