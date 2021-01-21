@@ -29,6 +29,14 @@
 					else
 						$this->vue->pasModif();
 					break;
+				case 'changAva':
+					$this->vue->changAva();
+					break;
+				case 'choixAvaDone':
+					$this->mod->updateAva($_GET['choix']);
+					$this->mod->recupInfo();
+					$this->vue->afficheInfo();
+					break;
 				default:
 					break;
 			}

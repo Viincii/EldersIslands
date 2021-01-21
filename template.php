@@ -2,12 +2,16 @@
 	<head>
 		<meta charset="utf-8"/>
         <link rel="stylesheet" href="style.css">
-	</head>	
+	</head>
 	<body>
+		<?php
+			$co = new ComposantConnexion();
+			$co->affiche();
+		?>
 		<div id='Titre'>
-			<h1>Elder's Island</h1>
+			<a href='index.php' id='titrePage'><h1>Elder's Island</h1></a>
 		</div>
-
+		
 		<div id='menu'>
 			<?php
 				include_once "Composants/CompMenu/ComposantMenu.php";

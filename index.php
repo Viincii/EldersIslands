@@ -3,20 +3,17 @@
 	include_once "connexion.php";
 	include_once "Composants/CompConnexion/ComposantConnexion.php";
 	include_once "vue_generique.php";
+
 	$co = new Connexion();
 	$co->initConnexion();
-	
+
 	if(!isset($_GET['action'])){
-        $_GET['action']= 'default';
-	}
-	
+        $_GET['action']= 'init';
+    }
     if(!isset($_GET['module'])){
         $_GET['module']= 'init';
-	}
+    }
 
-	if(!isset($_GET['message'])){
-		$_GET['message']= 'default';
-	}
 	
 	switch($_GET['module']){
 		case 'connexion':
@@ -43,5 +40,4 @@
 	}
 				
 	include "template.php";
-	
 ?>	
