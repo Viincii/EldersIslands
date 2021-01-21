@@ -11,6 +11,9 @@
     }
     if(!isset($_GET['module'])){
         $_GET['module']= 'init';
+	}
+	if(!isset($_GET['amis'])){
+        $_GET['amis']= 'init';
     }
 	switch($_GET['module']){
 		case 'connexion':
@@ -37,8 +40,6 @@
 			include_once "Modules/guilde/mod_guilde.php";
 			new Mod_Guilde();
 			break;			
-		default:
-			break;
 		case 'Jouer':
 			include_once "Modules/CreerPartie/ModuleCreerPartie.php";
 			new ModuleCreerPartie();		
@@ -46,5 +47,7 @@
 		default:
 			break;	
 	}
+	include_once "Modules/Amis/mod_amis.php";
+	new Mod_Amis();
 	include "template.php";
 ?>	

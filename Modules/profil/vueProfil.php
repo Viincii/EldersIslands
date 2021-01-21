@@ -11,8 +11,7 @@
 					Niveau : ".$_POST['niveau']."<br/>
 					Points : ".$_POST['points']."<br/>";
 				if($_POST['nomG']!= NULL){
-					echo "NomGuilde : ".$_POST['nomG']."<br/>
-					Description Guilde : ".$_POST['descG']."<br/>";
+					echo "Guilde : ".$_POST['nomG']."<br/>";
 				}
 				echo "<a href=index.php?module=profil&action=modif><button class='butP'>Cliquez ici pour changer de mot de passe</button><a/><br/>
 					<a href=index.php?module=profil&action=changAva><button class='butP'>Modifier votre avatar</button></a>

@@ -1,5 +1,5 @@
 	body{
-		background: no-repeat url("Image/fond.jpg");
+		background: no-repeat url("Image/fondSite.jpg");
 		background-size: cover;
 	}
 
@@ -36,7 +36,6 @@
 		height: 85px;
 		background: no-repeat url("Image/menu.png");
 		background-size: 100%;
-		margin: 5px;
 	}
 
 	.lienMenu{
@@ -308,4 +307,171 @@
 		font-weight: bold;
 		font-size: 24px;
 		width: 50%;
+	}
+
+	#guilde{
+		position: absolute;
+		top: 21%;
+		left: 25%;
+		height: 50%;
+		width: 50%;
+		background: no-repeat url("Image/pancarte.png");
+		border-radius: 50px;
+		background-position: center;
+		background-size: 60%;
+		text-align: center;
+	}
+
+	#titreG{
+		font-size: 24px;
+		font-weight: bold;
+		margin-top: 260px;
+		text-align: center;
+		color: black;
+		border-radius: 25px;
+		width: 50%;
+		margin-left: 240px;
+	}
+
+	#titreG:hover{
+		color: red;
+	}
+
+	#titreG2{
+		font-size: 24px;
+		font-weight: bold;
+		margin-top: 260px;
+		text-align: center;
+		color: black;
+		border-radius: 25px;
+		width: 50%;
+		margin-left: 240px;
+	}
+
+	#titreG2:hover{
+		color: green;
+	}
+
+	#formCreaG{
+		text-align: center;
+		font-size: large;
+		font-weight: bold;
+	}
+
+	#boutonCrea{
+		margin-top: 50px;
+		font-size: larger;
+		border-radius: 10px;
+		background: none;
+	}
+
+	#boutonCrea:hover{
+		background-color: green;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	.boutonGuilde{
+		display: block;
+		text-decoration: none;
+		margin-top: 50px;
+		font-size: larger;
+		border-radius: 10px;
+		background-color: lemonchiffon;
+		margin-left: 35%;
+	}
+	#b2{
+		margin-left: 39%;
+	}
+
+	.boutonGuilde:hover{
+		background-color: green;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	.listeG{
+		margin-top: 5px;
+		text-decoration: none;
+		font-size: 25px;
+		font-weight: bold;
+		overflow-y: scroll;
+		height: 100px;
+		width: 400px;
+		margin-left: 280px;
+	}
+	.lienG{
+		text-decoration: none;
+		color: black;
+	}
+	.lienG:hover{
+		color: green;
+	}
+
+	#desc{
+		font-size: larger;
+		font-weight: bold;
+	}
+	#listeMem{
+		margin-left: 280px;
+		width: 400px;
+		height: 100px;
+		overflow-y: scroll;
+		font-weight: bold;
+		font-size: large;
+	}
+
+	#listeC{
+		position: absolute;
+		top: 70%;
+		width: 100px;
+		height: 100px;
+		margin-left: -40px;
+		background: no-repeat url("Image/listeC.png");
+	}
+	#listeApparente{
+		position: absolute;
+		top: 70%;
+		width: 100px;
+		height: 100px;
+		margin-left: 160px;
+		background: no-repeat url("Image/listeC.png");
+	}
+
+	#listeAmis{
+		position: absolute;
+		top: 65%;
+		width: 200px;
+		height: 300px;
+		background: no-repeat url("Image/fondAmis.png");
+		background-size: cover;
+		margin-left: -10px;
+		border-radius: 40px;
+	}
+	.listeA{
+		font-size: 15px;
+		overflow-y: scroll;
+		margin: 0px;
+		height: 200px;
+	}
+	#titreLA{
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		border: 3px solid black;
+		border-radius: 10px;
+		margin-top: 30px;
+	}
+
+	.amis{
+		margin-left: 30px;
+	}
+
+	#ajoutA{
+		margin-left: 50px;
+		border-radius: 10px;
+		background: none;
+	}
+
+	#ajoutA:hover{
+		border: 3px solid black;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
