@@ -6,10 +6,9 @@
 		public function InsertUser(){
 			$pseudo = $_POST['pseudo'];
 			$mdp =  hash("haval160,4", $_POST['mdp']);
-			
 			try{
-				$res = self::$bdd-> prepare("INSERT INTO utilisateur (PSEUDO, MDP, NIVEAU, POINTS, CONNECTE) values (?,?,1,0,0);");
-				$res->execute(array($pseudo ,  $mdp));
+				$res = self::$bdd->prepare("INSERT INTO utilisateur (PSEUDO, MDP, NIVEAU, POINTS, CONNECTE,Avatar) values (?,?,1,0,0,'Image/cat.png');");
+				$res->execute(array($pseudo, $mdp));
 			}
 			catch (PDOexception $eo){
 				echo $eo.getMessage().$eo.getCode();

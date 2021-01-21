@@ -15,7 +15,7 @@
 			$this->form();			
 		}
 		public function refusCon(){
-			echo "<div id ='formCo'>L'identifiant ou le mot de passe sont incorrects";
+			echo "<div id ='formCo'><p id='fauxCo'>L'identifiant ou le mot de passe sont incorrects.</p>";
 			$this->form();
 		}
 	}
