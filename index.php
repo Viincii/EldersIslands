@@ -3,7 +3,6 @@
 	include_once "connexion.php";
 	include_once "Composants/CompConnexion/ComposantConnexion.php";
 	include_once "vue_generique.php";
-
 	$co = new Connexion();
 	$co->initConnexion();
 
@@ -13,8 +12,6 @@
     if(!isset($_GET['module'])){
         $_GET['module']= 'init';
     }
-
-	
 	switch($_GET['module']){
 		case 'connexion':
 			include_once "Modules/connexion/mod_connexion.php";
@@ -23,6 +20,10 @@
 		case 'Bestiaire':
 			include_once "Modules/Bestiaire/ModuleBestiaire.php";
 			new ModuleBestiaire();
+			break;
+		case 'Deck':
+			include_once "Modules/Deck/mod_deck.php";
+			new mod_deck();
 			break;
 		case 'inscription':
 			include_once "Modules/inscription/mod_inscription.php";
@@ -38,6 +39,5 @@
 		default:
 			break;	
 	}
-				
 	include "template.php";
 ?>	

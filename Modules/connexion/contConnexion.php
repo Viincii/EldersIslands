@@ -32,7 +32,7 @@
 			}
 		}
 		public function estCo(){
-			if(!isset($_SESSION['id'])&& $this->action == 'connecte'){
+			if(!isset($_SESSION['pseudo'])&& $this->action == 'connecte'){
 				$this->vue->refusCon();
 			}
 		}

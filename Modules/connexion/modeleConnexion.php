@@ -23,10 +23,10 @@
 				echo $eo.getMessage().$eo.getCode();
 			}
 		}
-		public function deco($id){
+		public function deco($pseudo){
 			try{
 				$downCo= self::$bdd -> prepare("UPDATE utilisateur SET CONNECTE=0 WHERE PSEUDO=?;");
-				$downCo->execute(array($id));
+				$downCo->execute(array($pseudo));
 			}
 			catch (PDOexception $eo){
 				echo $eo.getMessage().$eo.getCode();
