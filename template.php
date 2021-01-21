@@ -2,14 +2,10 @@
 	<head>
 		<meta charset="utf-8"/>
         <link rel="stylesheet" href="style.css">
-	</head>
+	</head>	
 	<body>
-		<?php
-			$co = new ComposantConnexion();
-			$co->affiche();
-		?>
 		<div id='Titre'>
-			<a href='index.php' id='titrePage'><h1>Elder's Island</h1></a>
+			<h1>Elder's Island</h1>
 		</div>
 		<?php
 			if(isset($_SESSION['id'])){
