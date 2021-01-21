@@ -4,9 +4,6 @@
         <link rel="stylesheet" href="style.css">
 	</head>	
 	<body>
-		<div id='Titre'>
-			<h1>Elder's Island</h1>
-		</div>
 		<?php
 			if(isset($_SESSION['id'])){
 				echo "<input type='text' id='idJoueur' value=".$_SESSION['id']." hidden />";

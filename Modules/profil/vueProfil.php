@@ -4,14 +4,18 @@
 		}
 		
 		function afficheInfo(){
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
-				echo "Utilisateur : ".$_SESSION['id']."<br/>
-				Niveau : ".$_POST['niveau']."<br/>
-				Points : ".$_POST['points']."<br/>
-				NomGuilde : ".$_POST['nomG']."<br/>
-				Description Guilde : ".$_POST['descG']."<br/>
-				<a href=index.php?module=profil&action=modif>Cliquez ici pour changer de mot de passe<a/>";
+				echo "<div id='profil'><img src=".$_SESSION['avatar']." class='imgAvaP'>
+					<div id='textP'>".$_SESSION['pseudo']."<br/>
+					Niveau : ".$_POST['niveau']."<br/>
+					Points : ".$_POST['points']."<br/>";
+				if($_POST['nomG']!= NULL){
+					echo "Guilde : ".$_POST['nomG']."<br/>";
+				}
+				echo "<a href=index.php?module=profil&action=modif><button class='butP'>Cliquez ici pour changer de mot de passe</button><a/><br/>
+					<a href=index.php?module=profil&action=changAva><button class='butP'>Modifier votre avatar</button></a>
+					<a href=index.php?module=connexion&action=deco><button class='butP'>Deconnexion</button></a></div></div>";
 			}
 		}
 

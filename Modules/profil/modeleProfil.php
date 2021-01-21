@@ -4,7 +4,7 @@
 		}	
 		
 		function recupInfo(){
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
 					$res = self::$bdd-> prepare("SELECT NIVEAU,POINTS, IDGuilde FROM utilisateur where PSEUDO =?;");
@@ -40,7 +40,7 @@
 				return 1;
 			$mdp= hash("haval160,4", $mdp);
 
-			$pseudo = isset($_SESSION['id'])?$_SESSION['id']:NULL;
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
 			if ($pseudo != NULL) {
 				try{
 					$res = self::$bdd-> prepare("SELECT MDP FROM utilisateur where PSEUDO =?;");
@@ -51,6 +51,32 @@
 					$res = self::$bdd-> prepare("UPDATE utilisateur set MDP=? where PSEUDO =?;");
 					$res->execute(array($mdp,$pseudo));
 					return 0;
+				}
+				catch (PDOexception $eo){
+					echo $eo.getMessage().$eo.getCode();
+				}
+			}
+		}
+
+		function updateAva($choix){
+			switch($choix){
+				case 1:
+					$img = 'Image/cat.png';
+					break;
+				case 2:
+					$img = 'Image/cutiehamster.png';
+					break;
+				default:
+					$img = 'Image/dog.png';
+					break;
+			}
+
+			$pseudo = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
+			if ($pseudo != NULL) {
+				try{
+					$res = self::$bdd-> prepare("UPDATE utilisateur set Avatar=? where PSEUDO =?;");
+					$res->execute(array($img, $pseudo));
+					$_SESSION['avatar']=$img;
 				}
 				catch (PDOexception $eo){
 					echo $eo.getMessage().$eo.getCode();

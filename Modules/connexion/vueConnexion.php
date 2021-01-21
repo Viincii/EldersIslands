@@ -3,11 +3,10 @@
 		function __construct(){
 		}
 		public function form(){
-			echo "<p>Formulaire de connexion: </p><br>".
-				'<form action="index.php?module=connexion&action=connecte" method="post">
-					<label for="id">Nom d\'utilisateur :</label><input type="text" name="id" id="id"><br>
-					<label for="mdp">Mot de passe :</label><input type="password" name="mdp" id="mdp" size="24"><br>
-					<input type="submit" value="Connexion">
+			echo '<form action="index.php?module=connexion&action=connecte" method="post" id="formC">
+					<label for="id">Nom d\'utilisateur :</label><input type="text" name="pseudo" class="textForm"><br>
+					<label for="mdp">Mot de passe :</label><input type="password" name="mdp" class="textForm" size="24"><br>
+					<input type="submit" value="Connexion" id="boutonConnexion">
 				</form>
 				<p><a href="index.php?module=inscription&action=initIns">Cliquez ici pour vous inscrire</a></p>';
 		}

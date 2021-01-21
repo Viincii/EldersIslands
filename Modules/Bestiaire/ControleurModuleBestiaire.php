@@ -3,6 +3,8 @@
 		private $vue;
 		private $modele;
 
+
+
 		function __construct(){
 			include_once "VueModuleBestiaire.php";
 			$this->vue = new VueModuleBestiaire();

@@ -18,6 +18,10 @@
 		$_GET['message']= 'default';
 	}
 	
+	if(!isset($_GET['amis'])){
+        $_GET['amis']= 'init';
+    }
+
 	switch($_GET['module']){
 		case 'connexion':
 			include_once "Modules/connexion/mod_connexion.php";
@@ -27,13 +31,22 @@
 			include_once "Modules/Bestiaire/ModuleBestiaire.php";
 			new ModuleBestiaire();
 			break;
+		case 'Deck':
+			include_once "Modules/Deck/mod_deck.php";
+			new mod_deck();
+			break;
 		case 'inscription':
 			include_once "Modules/inscription/mod_inscription.php";
 			new Mod_Insription();
+			break;
 		case 'profil':
 			include_once "Modules/profil/mod_profil.php";
-			new Mod_Profil();	
+			new Mod_Profil();
 			break;
+		case 'Guilde':
+			include_once "Modules/guilde/mod_guilde.php";
+			new Mod_Guilde();
+			break;			
 		case 'Jouer':
 			include_once "Modules/CreerPartie/ModuleCreerPartie.php";
 			new ModuleCreerPartie();		
@@ -41,7 +54,8 @@
 		default:
 			break;	
 	}
-				
+	include_once "Modules/Amis/mod_amis.php";
+	new Mod_Amis();
 	include "template.php";
 	
 ?>	
