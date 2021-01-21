@@ -20,10 +20,10 @@
 					break;
 				case 'connecte':
 					$this->idSession = $_POST['id'];
-					$i = $this->mod->testCon();
+					$i = $this->mod->Con();
 					break;
 				case 'deco':
-					$id=isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
+					$id=isset($_SESSION['id'])?$_SESSION['id']:NULL;
 					session_unset();
 					$this->mod->deco($id);
 					break;

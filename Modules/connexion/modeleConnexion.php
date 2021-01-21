@@ -3,18 +3,18 @@
 		function __construct(){
 		}	
 		
-		public function testCon(){
-			$pseudo = $_POST['id'];
+		public function Con(){
+			$id = $_POST['id'];
 			$mdp = hash("haval160,4", $_POST['mdp']);
 			try{
-				$res = self::$bdd-> prepare("SELECT ID,MDP FROM utilisateur where PSEUDO =?;");
-				$res->execute(array($pseudo));
+				$res = self::$bdd-> prepare("SELECT MDP, Avatar FROM utilisateur where PSEUDO =?;");
+				$res->execute(array($id));
 				$result = $res->fetch();
 				if($mdp == $result['MDP']){
-					$_SESSION['pseudo'] = $pseudo;
-					$_SESSION['id'] = $result['ID'];
+					$_SESSION['id'] = $id;
 					$upCo= self::$bdd -> prepare("UPDATE utilisateur SET CONNECTE=1 WHERE PSEUDO=?;");
-					$upCo->execute(array($pseudo));
+					$upCo->execute(array($id));
+					$_SESSION['avatar']= $result['Avatar'];
 					return true;
 				}
 				return false;
