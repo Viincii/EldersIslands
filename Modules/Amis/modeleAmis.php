@@ -5,19 +5,20 @@
 		
 		function ajouterAmi(){
             $pseudo =isset($_POST['pseudoAmi'])?$_POST['pseudoAmi']:NULL;
-            try{
-                $requeteUtilisateur = self::$bdd->prepare("SELECT ID FROM utilisateur where PSEUDO=?");
-                $requeteUtilisateur->execute(array($_POST['pseudoAmi']));
+            if($pseudo!=NULL)
+                try{
+                    $requeteUtilisateur = self::$bdd->prepare("SELECT ID FROM utilisateur where PSEUDO=?");
+                    $requeteUtilisateur->execute(array($_POST['pseudoAmi']));
 
-                $idA = $requeteUtilisateur->fetch()['ID'];
-                $requeteAjout = self::$bdd->prepare("INSERT INTO amis values (?,?);");
-                $requeteAjout->execute(array($_SESSION['id'], $idA));
-                $requeteAjout2 = self::$bdd->prepare("INSERT INTO amis values (?,?);");
-                $requeteAjout2->execute(array($idA,$_SESSION['id']));
-			}
-			catch (PDOexception $eo){
-				echo $eo.getMessage().$eo.getCode();
-			}
+                    $idA = $requeteUtilisateur->fetch()['ID'];
+                    $requeteAjout = self::$bdd->prepare("INSERT INTO amis values (?,?);");
+                    $requeteAjout->execute(array($_SESSION['id'], $idA));
+                    $requeteAjout2 = self::$bdd->prepare("INSERT INTO amis values (?,?);");
+                    $requeteAjout2->execute(array($idA,$_SESSION['id']));
+                }
+                catch (PDOexception $eo){
+                    echo $eo.getMessage().$eo.getCode();
+                }
 		}
 
 		function recupAmis(){

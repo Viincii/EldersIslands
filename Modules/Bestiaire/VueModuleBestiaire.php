@@ -29,7 +29,7 @@
 				  <div id='carac'>
 					<p>Rareté :".$créa["ETOILES"]."</p>
 					<p>Nom : ".$créa["NOM"]."</p>
-					<p>Poid : ".$créa["POIDS"]."</p>
+					<p>Poids : ".$créa["POIDS"]."</p>
 				  </div>
 
 				  <div id='carac2'>
