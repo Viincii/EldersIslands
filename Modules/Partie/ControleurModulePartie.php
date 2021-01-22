@@ -28,10 +28,12 @@
 		function trieChoix(){
 			if(isset($_GET['case']) && isset($_GET['crea'])){
 				$this->modele->inserCreaTab();
+				return ;
 			}
 
 			if(isset($_GET['case'])){
 				$this->vue->afficheDeck($this->modele->contenuListe());
+				return;
 			}
 
 		}

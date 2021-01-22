@@ -102,29 +102,28 @@
 		
 		public function inserCreaTab(){
 			try{
-				$verif1 = self::$bdd->prepare("Select ID from utilisateur where pseudo = ?");
+				$verif1 = self::$bdd->prepare("Select ID from utilisateur where pseudo = ?;");
 				$verif1->execute(array($_SESSION['pseudo']));
 				$Joueur = $verif1->fetch();
 
-				$verif2 = self::$bdd->prepare("Select IDC from crea where NOM = ?");
+				$verif2 = self::$bdd->prepare("Select IDC from crea where NOM = ?;");
 				$verif2->execute(array($_GET['crea']));
 				$crea = $verif2->fetch();
 			
 				$all = explode('-', $_GET['case']);
-
+				
 				if($all[0]=="J1"){
-					$verif3 = self::$bdd->prepare("Select TABJ1 from partie where IDP = ?");
+					$verif3 = self::$bdd->prepare("Select TABJ1 from partie where IDP = ?;");
 					$verif3->execute(array($_GET['id']));
 					$idTab = $verif3->fetch();
 					$idTab = $idTab['TABJ1'];
 				}else{
-					$verif3 = self::$bdd->prepare("Select TABJ2 from partie where IDP = ?");
+					$verif3 = self::$bdd->prepare("Select TABJ2 from partie where IDP = ?;");
 					$verif3->execute(array($_GET['id']));
 					$idTab = $verif3->fetch();
 					$idTab = $idTab['TABJ2'];
 				}
-
-				$verif4 = self::$bdd->prepare("UPDATE `tableau` SET `CASE".$all[1]."`=? WHERE IDT=?");
+				$verif4 = self::$bdd->prepare("UPDATE `tableau` SET `CASE".$all[1]."`=? WHERE IDT=?;");
 				$verif4 -> execute(array($crea['IDC'], $idTab));
 			}catch (PDOexception $eo){
 				echo $eo.getMessage().$eo.getCode();

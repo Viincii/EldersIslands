@@ -35,7 +35,7 @@
 				}
 			?>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="jquery-3.5.1.min.js"></script>
 	<script src="Tchat.js"></script>
 	<script src="Modules/Partie/Script.js"></script>
 </html>

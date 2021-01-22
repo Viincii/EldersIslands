@@ -100,27 +100,10 @@ $(document).ready(function(){
 
             success : function(data){
                 $test = data.split('|');
-                /*for (i = 1; i < $test.length; i+2) {
-                    //alert($test[i]);
-                   if($test[i]==0){
-                        $("#"+$test[i-1]).css('background-color', 'white');;
-                   } else{
-                        //alert("1");
-                        $("#"+$test[i-1]).css('background-color', 'red');;
-                   }
-                }
-                */
             }
         })
     }
 
-    $("#actionCrea").on("click", function(){
-        $.ajax({
-            success : function(){
-                document.location.href="index.php?module=Jouer&action=Partie&id="+$("#idPartie").val()+"&J="+$("#Joueur").val();
-            }
-        })
-    });
 
     $("#buttonPV").on("click", function(){
         $.ajax({
@@ -138,9 +121,7 @@ $(document).ready(function(){
         })
     });
 
-    setInterval(checkCrea, 250);
     setInterval(checkHP, 250);
     setInterval(checkTour, 250);
     setInterval(checkVictoire, 250);
-    //setInterval(partieComplète, 1000);
 });
