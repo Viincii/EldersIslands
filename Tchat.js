@@ -4,25 +4,31 @@ $(document).ready(function(){
             url: "Modules/Tchat/insertMessage.php",
             type:"POST",
             data:{
-                Envo: $("#Envo").val(),
+                Envo: $("#idJoueur").val(),
                 Dest: $("#Dest").val(),
                 Text: $("#Text").val(),
             },
-            dateType:"text",
+            dataType:"text",
+            success :function(){
+                $("#Text").flush();
+            }
         })
     });
 
-    /*setInterval(function(){
+    function recevoirMessages(){
         $.ajax({
             url: "Modules/Tchat/realTimeChat.php",
             type:"POST",
             data:{
                 Envo: $("#Envo").val(),
                 Dest: $("#Dest").val(),
-                Text: $("#Text").val(),
             },
-            dateType:"text",
+            dataType:"text",
+            success :function(){
+
+            }
         })
-    })
-    */
+    }
+    setInterval(recevoirMessages, 1000);
+    
 });
