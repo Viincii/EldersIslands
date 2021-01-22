@@ -13,19 +13,20 @@
             $this->vue = new vueDeck();
             $this->action=isset($_GET['action'])?$_GET['action']:NULL;
             $this->id = isset($_SESSION['pseudo'])?$_SESSION['pseudo']:NULL;
-            $this->idDeckAModif= isset($_POST['idDeck'])?$_POST['idDeck']:NULL;
+            $this->idDeckAModif= isset($_GET['idDeck'])?$_GET['idDeck']:NULL;
             $this->triAct();
         }
 
         function triAct()
         {
             switch ($this->action) {
-//                case 'init':
-//                    if($_SESSION['pseudo']==null){
-//                        $this->vue->vuePasCo();
-//                    }
-//
-//                    break;
+                case 'init':;
+                    $this->mod->contenuListe($this->id);
+                    $this->vue->vueDeckBasique();
+                    if ($this->mod->existeDeck()) {
+                        $this->vue->afficherListeDeck($this->mod->contenuListe($this->id));
+                    }
+                    break;
                 case 'checkBox':
                     $this->vue->checkBoxCrea();
                     break;
@@ -33,14 +34,12 @@
                     $this->mod->creerDeck($this->id);
                     break;
                 case 'checkBoxModif':
-                    $this->vue->checkBoxCreaModifDeck();
+                    $this->vue->checkBoxCreaModifDeck($this->id);
                     break;
                 case 'modifierDeck':
                     $this->mod->modifierDeck($this->idDeckAModif);
                 default:
-                    $this->vue->vueDeckBasique();
-//                    this->vue->afficherListeDeck($this->id);
-                    break;
+
             }
         }
     }

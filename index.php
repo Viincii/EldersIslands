@@ -50,7 +50,15 @@
 		case 'Jouer':
 			include_once "Modules/CreerPartie/ModuleCreerPartie.php";
 			new ModuleCreerPartie();		
-			break;	
+			break;
+		case 'Ligue':
+			include_once "Modules/Ligue/mod_ligue.php";
+			new Mod_Ligue();
+			break;
+		case 'Lore':
+			include_once "Modules/Lore/mod_lore.php";
+			new Mod_Lore();
+			break;
 		default:
 			break;	
 	}

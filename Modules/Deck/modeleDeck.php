@@ -7,6 +7,25 @@
 
         }
 
+        public function existeDeck(){
+            $requeteExisteDeck= self::$bdd->prepare("SELECT IDD from deck where IDU = ?;");
+            $requeteExisteDeck->execute(array($_SESSION['pseudo']));
+            $existeDeck = $requeteExisteDeck->fetch();
+            if (isset($existeDeck['IDD'])){
+                return true;
+            }else return false;
+
+        }
+//        public function nombreDeck($pseudo){
+//            $recupIdUtilisateur = self::$bdd->prepare("SELECT ID FROM UTILISATEUR WHERE PSEUDO = ?;");
+//            $recupIdUtilisateur->execute(array($pseudo));
+//            $id=$recupIdUtilisateur->fetch();
+//
+//            $requeteNbDeck= self::$bdd->prepare("SELECT COUNT(IDD) FROM DECK WHERE IDU =?");
+//            $requeteNbDeck->execute(array($id['ID']));
+//            $NbDeck=$requeteNbDeck->fetch;
+//            echo var_dump($NbDeck);
+//        }
 //        public function recupérationIdJoueur($pseudo){
 //            try {
 //                $recupIdUtilisateur = self::$bdd->prepare("SELECT ID FROM UTILISATEUR WHERE PSEUDO = ?;");
@@ -92,12 +111,20 @@
             echo "Le Deck à été modifié avec succès!";
         }
 
-        public function contenuListe($idUtilisateur){
+        public function contenuListe($pseudo){
 
-            $deckcontient = self::$bdd->prepare("select IDD,IDC,IDU,NOM FROM deck NATURAL JOIN contient NATURAL JOIN crea where IDU=?");
-            $deckcontient->execute(array($idUtilisateur));
-            $contenuListe = $deckcontient->fetchAll();
-            $_POST['contenuListe'] = $contenuListe;
+            $recupIdUtilisateur = self::$bdd->prepare("SELECT ID FROM UTILISATEUR WHERE PSEUDO = ?;");
+            $recupIdUtilisateur->execute(array($pseudo));
+            $id=$recupIdUtilisateur->fetch();
+
+            $recupListeDeckUtilisateur = self::$bdd->prepare("SELECT IDD FROM DECK WHERE IDU = ?;");
+            $recupListeDeckUtilisateur->execute(array($id['ID']));
+            $listeDeckUtil=$recupListeDeckUtilisateur->fetch();
+
+            $deckcontient = self::$bdd->prepare("SELECT IDD,NOM FROM CONTIENT NATURAL JOIN CREA WHERE IDD= ? ;");
+            $deckcontient->execute(array($listeDeckUtil['IDD']));
+            $liste = $deckcontient->fetchAll();
+            return $liste;
 
         }
     }
