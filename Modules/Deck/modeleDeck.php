@@ -8,16 +8,21 @@
         }
 
         public function existeDeck(){
-            $recupIdUtilisateur = self::$bdd->prepare("SELECT ID FROM UTILISATEUR WHERE PSEUDO = ?;");
-            $recupIdUtilisateur->execute(array($_SESSION['pseudo']));
-            $id=$recupIdUtilisateur->fetch();
+            try {
+                $recupIdUtilisateur = self::$bdd->prepare("SELECT ID FROM UTILISATEUR WHERE PSEUDO = ?;");
+                $recupIdUtilisateur->execute(array($_SESSION['pseudo']));
+                $id=$recupIdUtilisateur->fetch();
 
-            $requeteExisteDeck= self::$bdd->prepare("SELECT IDD from deck where IDU = ?;");
-            $requeteExisteDeck->execute(array($id['ID']));
-            $existeDeck = $requeteExisteDeck->fetch();
-            if (isset($existeDeck['IDD'])){
-                return true;
-            }else return false;
+                $requeteExisteDeck= self::$bdd->prepare("SELECT IDD from deck where IDU = ?;");
+                $requeteExisteDeck->execute(array($id['ID']));
+                $existeDeck = $requeteExisteDeck->fetch();
+                if (isset($existeDeck['IDD'])){
+                    return true;
+                }else return false;
+
+            }catch (PDOException $pdoE){
+
+            }
 
         }
 
