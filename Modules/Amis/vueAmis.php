@@ -14,7 +14,7 @@
         function listeVue(){
             echo "<div id='listeAmis'><p id='titreLA'>Liste d'amis :</p><div class='listeA'>";
             foreach($_POST['lAmis'] as $key => $value){
-                echo "<p class='amis'>".$value[0]."</p>";
+                echo "<a href='".$_SERVER['REQUEST_URI']."&Dest=".$value[0]."'><p class='amis'>".$value[0]."</p></a>";
             }
             echo "</div>";
             if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')

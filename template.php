@@ -8,12 +8,14 @@
 			if(isset($_SESSION['id'])){
 				echo "<input type='text' id='idJoueur' value=".$_SESSION['id']." hidden />";
 			}	
+			if(isset($_GET['Dest']))
+				echo "<input type='text' id='Dest' value=".$_GET['Dest']." hidden />";
 		?>
 		<div id='menu'>
 			<?php
 				if($_GET['module']!="Jouer"){
 					include_once "Composants/CompMenu/ComposantMenu.php";
-					$menu = new ComposantMenu();
+					new ComposantMenu();
 				}
 			?>
 		</div>
@@ -29,7 +31,7 @@
 			<?php
 				if(isset($_SESSION['id'])){
 					include_once "Modules/Tchat/ModuleTchat.php";
-					$mess = new ModuleTchat();
+					new ModuleTchat();
 				}
 			?>
 	</body>

@@ -4,6 +4,7 @@
 		}	
 		
 		function ajouterAmi(){
+            $pseudo =isset($_POST['pseudoAmi'])?$_POST['pseudoAmi']:NULL;
             try{
                 $requeteUtilisateur = self::$bdd->prepare("SELECT ID FROM utilisateur where PSEUDO=?");
                 $requeteUtilisateur->execute(array($_POST['pseudoAmi']));
