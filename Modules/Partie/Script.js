@@ -7,7 +7,7 @@ $(document).ready(function(){
                 ID: $("#idPartie").val(),
                 IDJ: $("#Joueur").val(),
             },
-            dateType:"text",
+            dataType:"text",
 
             success : function(data){
                 $("#showPV").html("PV :" +data);
@@ -22,19 +22,37 @@ $(document).ready(function(){
             data:{
                 ID: $("#idPartie").val(),
             },
-            dateType:"text",
+            dataType:"text",
 
             success : function(data){
                 $("#showTour").html("Tour joueur :" +data);
                 if(data==1 && $("#Joueur").val()==1){
                     $("#buttonPV").css('visibility', 'visible');
+                    $(".choix").css('visibility', 'visible');
                 }else if(data==2 && $("#Joueur").val()==2){
                     $("#buttonPV").css('visibility', 'visible');
+                    $(".choix").css('visibility', 'visible');
                 }else{
                     $("#buttonPV").css('visibility', 'hidden');
+                    $(".choix").css('visibility', 'hidden');
                 }
             }
         })
+    }
+
+    function partieComplète(){
+        $.ajax({
+            url: "Modules/Partie/partieComplete.php",
+            type:"POST",
+            data:{
+                ID: $("#idPartie").val(),
+            },
+            dataType:"text",
+
+            success : function(data){
+                $("#complet").value = 'true';
+            }
+        });
     }
 
     function checkVictoire(){
@@ -44,7 +62,7 @@ $(document).ready(function(){
             data:{
                 ID: $("#idPartie").val(),
             },
-            dateType:"text",
+            dataType:"text",
 
             success : function(data){
                 if(data==0){
@@ -61,15 +79,48 @@ $(document).ready(function(){
             data:{
                 ID: $("#idJoueur").val(),
             },
-            dateType:"text",
+            dataType:"text",
 
             success : function(data){
-                if(data==0){
-                    document.location.href="index.php";
+                if(data!=null){
+                    document.location.href=data;
                 }
             }
         })
     }
+
+    function checkCrea(){
+        $.ajax({
+            url: "Modules/Partie/checkCrea.php",
+            type:"POST",
+            data:{
+                ID: $("#idPartie").val(),
+            },
+            dataType:"text",
+
+            success : function(data){
+                $test = data.split('|');
+                /*for (i = 1; i < $test.length; i+2) {
+                    //alert($test[i]);
+                   if($test[i]==0){
+                        $("#"+$test[i-1]).css('background-color', 'white');;
+                   } else{
+                        //alert("1");
+                        $("#"+$test[i-1]).css('background-color', 'red');;
+                   }
+                }
+                */
+            }
+        })
+    }
+
+    $("#actionCrea").on("click", function(){
+        $.ajax({
+            success : function(){
+                document.location.href="index.php?module=Jouer&action=Partie&id="+$("#idPartie").val()+"&J="+$("#Joueur").val();
+            }
+        })
+    });
 
     $("#buttonPV").on("click", function(){
         $.ajax({
@@ -79,12 +130,17 @@ $(document).ready(function(){
                 ID: $("#idPartie").val(),
                 IDJ: $("#Joueur").val(),
             },
-            dateType:"text",
-            
+            dataType:"text",
+
+            success : function(){
+                document.location.href="index.php?module=Jouer&action=Partie&id="+$("#idPartie").val()+"&J="+$("#Joueur").val();
+            }
         })
     });
 
-    //setInterval(checkHP, 250);
-    //setInterval(checkTour, 250);
-    //setInterval(checkVictoire, 250);
+    setInterval(checkCrea, 250);
+    setInterval(checkHP, 250);
+    setInterval(checkTour, 250);
+    setInterval(checkVictoire, 250);
+    //setInterval(partieComplète, 1000);
 });

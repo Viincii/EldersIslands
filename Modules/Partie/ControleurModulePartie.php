@@ -9,6 +9,7 @@
 			include_once "VueModulePartie.php";
 			$this->vue = new VueModulePartie();
 			$this->trieAffichage();
+			$this->trieChoix();
 		}
 
 		function trieAffichage(){
@@ -22,6 +23,17 @@
 				default:
 					break;
 			}
+		}
+
+		function trieChoix(){
+			if(isset($_GET['case']) && isset($_GET['crea'])){
+				$this->modele->inserCreaTab();
+			}
+
+			if(isset($_GET['case'])){
+				$this->vue->afficheDeck($this->modele->contenuListe());
+			}
+
 		}
 
 	}

@@ -25,12 +25,21 @@
 		function afficheMob($créa){
 			echo "<div id='bestiaire'>
 			      <img id='imageCrea' src=".$créa["IMAGE"].">
-			      <div id='carac'>
-				  <p>Numéro :".$créa["IDC"]."</p>
-			      <p>Nom : ".$créa["NOM"]."</p>
-			      </div>
+				  
+				  <div id='carac'>
+					<p>Rareté :".$créa["ETOILES"]."</p>
+					<p>Nom : ".$créa["NOM"]."</p>
+					<p>Poid : ".$créa["POIDS"]."</p>
+				  </div>
+
+				  <div id='carac2'>
+					<p>Taille :".$créa["TAILLE"]."</p>
+					<p>Point de Vie : ".$créa["PV"]."</p>
+					<p>Attaque : ".$créa["ATK"]."</p>
+				  </div>
+				  
 			      <div id='description'>
-			      <p>".$créa["DESCRIPTION"]."</p>
+			      	<p>".$créa["DESCRIPTION"]."</p>
 			      </div>";
 
 			echo "</div>";
