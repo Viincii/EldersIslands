@@ -25,6 +25,7 @@
             </div>
             <div>
            <input type = "submit" name="creerDeck" value="Créer le deck">
+           </div>
             </form>
                 ';
 
@@ -36,7 +37,7 @@
             echo "Vous allez maintenant devoir reselectionner les créatures que vous souhaitez avoir dans votre deck :";
             echo "<form action=index.php?module=Deck&action=modifierDeck&idDeck=".$id." method='post'>".
             '<div>
-²               <input type="checkbox" name = "crea[]" value = "Rem">
+               <input type="checkbox" name = "crea[]" value = "Rem">
                 Rem
             </div>
 
@@ -51,6 +52,7 @@
             </div>
             <div>
            <input type = "submit" name="modifierDeck" value="Modifier le deck">
+           </div>
             </form>
                 ';
 
@@ -59,7 +61,7 @@
         public function vueDeckBasique(){
             echo '<p id="phraseDeck">Voici la page de deck, vous pouvez y voir la liste de vos deck et vous avez la possibilité d\'en créer un nouveau</p>';
             echo '<form action="index.php?module=Deck&action=checkBox" method="post">
-                    <input  id="" type="submit" name="CreerDeck" value="Créer un deck">
+                    <input type="submit" name="CreerDeck" value="Créer un deck">
                   </form>';
 
 
@@ -74,7 +76,11 @@
                 $compteurDeck++;
                 echo $v['NOM'].",";
             }
-           echo " <a href=index.php?module=deck&action=checkBoxModif&idDeck=".$v['IDD'].">Modifier le deck<a/>";
+            echo "<form action=index.php?module=Deck&action=checkBoxModif&idDeck=".$v['IDD']."method = 'post'>".
+            '<input type = "submit" name="modifierDeck" value="Modifier">
+            
+            </form>
+            ';
         }
     }
 

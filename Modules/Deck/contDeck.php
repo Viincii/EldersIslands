@@ -33,7 +33,7 @@
                 case 'creationDeck':
                     $this->mod->creerDeck($this->id);
                     break;
-                case 'checkBoxModif':
+                case 'Modifier':
                     $this->vue->checkBoxCreaModifDeck($this->id);
                     break;
                 case 'modifierDeck':
