@@ -72,7 +72,7 @@
 		width: 38%;
 		height: 55%;
 		top: 25%;
-		left: 25%;
+		left: 30%;
 		padding-top: 4%;
 		padding-left: 3.5%;
 	}
@@ -89,11 +89,15 @@
 		margin-left: 1%;
 	}
 
-	#description{
-		display: inline-block;
+	#carac2{
 		position: absolute;
+		margin-left: 1%;
+	}
+
+	#description{
+		position: absolute;
+		left: 26%;
 		width: 40%;
-		margin-left: 28%;
 	}
 
 	#page0{
@@ -236,7 +240,6 @@
 	}
 
 	#avatars{
-		position: absolute;
 		position: absolute;
 		top: 25%;
 		left: 35%;
@@ -530,3 +533,182 @@
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
+
+	table{
+		border: 3px solid black;
+		border-radius: 10%;
+	}
+
+	#tableauAllie{
+		position: absolute;
+		top : 50%;
+		left : 40%;
+	}
+
+	#tableauEnnemi{
+		position: absolute;
+		top : 30%;
+		left : 40%;
+	}
+
+	td {
+		width: 50px;
+		height: 50px;
+	}
+
+	.choix{
+		width: 100%;
+		height: 100%;
+	}
+
+	#nexus{
+		background-color: blue;
+	}
+
+	#menuJeu{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 50%;
+		left : 30%;
+	}
+
+	.lienJeu{
+		margin-top: 30px;
+		width: 150%;
+		font-size: large;
+		border: 5px solid lightblue;
+		background: none;
+		color: white;
+		border-radius: 25px;
+		transition-duration: 0.3s;
+		text-decoration: none;
+		padding: 10%;
+	}
+
+	.lienJeu:hover{
+		background-color: lightblue;
+		color: black;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	#infoJ{
+		position: absolute;
+		top: 5%;
+		left: 2.5%;
+		width: 15%;
+	}
+
+	#bouton{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 50%;
+		left : 30%;
+	}
+
+	#listePartie{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 50%;
+		left : 30%;
+	}
+
+	#buttonPV{
+		margin-top: 30px;
+		width: 50%;
+		font-size: small;
+		border: 5px solid lightblue;
+		background: none;
+		color: white;
+		border-radius: 25px;
+		transition-duration: 0.3s;
+		text-decoration: none;
+		padding: 5%;
+	}
+
+	#showDeck{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 80%;
+		left : 40%;
+	}
+
+	#listeLigue{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 40%;
+		left : 35%;
+	}
+
+	#textLigue{
+		position: absolute;
+		text-align: center;
+		font-size: 45px;
+		color: white;
+		width: 50%;
+		height: 25%;
+		top : 25%;
+		left : 25%;
+	}
+
+	#actionCrea{
+		margin-top: 30px;
+		width: 5%;
+		font-size: small;
+		border: 5px solid lightblue;
+		text-align: center;
+		background: none;
+		color: white;
+		border-radius: 25px;
+		transition-duration: 0.3s;
+		text-decoration: none;
+		padding: 3%;
+		margin-right: 5%;;
+	}
+
+	#listeJo{
+		position: absolute;
+		width: 50%;
+		height: 25%;
+		top : 30%;
+		left : 20%;
+		position: absolute;
+		text-align: center;
+		font-size: 45px;
+		color: yellow;
+	}
+
+	#actionCrea:hover{
+		background-color: lightblue;
+		color: black;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	.lienGuilde{
+		margin-top: 30px;
+		width: 5%;
+		font-size: large;
+		border: 5px solid lightblue;
+		background: none;
+		color: white;
+		border-radius: 25px;
+		transition-duration: 0.3s;
+		text-decoration: none;
+		margin-right: 2%;
+		padding: 2%;
+	}
+
+	.lienGuilde:hover{
+		background-color: lightblue;
+		color: black;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	#phraseDeck{
+        width: 300px;
+        font-size: 20px;
+    }

@@ -27,10 +27,10 @@
 		<main>
 		</main>
 			<?php
-				if(isset($_SESSION['id'])){
+				/*if(isset($_SESSION['id'])){
 					include_once "Modules/Tchat/ModuleTchat.php";
 					$mess = new ModuleTchat();
-				}
+				}*/
 			?>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

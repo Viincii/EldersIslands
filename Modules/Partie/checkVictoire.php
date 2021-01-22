@@ -30,6 +30,12 @@
 			$verif7 = $test->prepare("UPDATE `partie` SET `FIN`=1 WHERE IDP=?");
 			$verif7->execute(array($partie));
 
+			$verif8 = $test->prepare("DELETE FROM `tableau` WHERE ID=?");
+			$verif8->execute(array($all['IDD1']));
+
+			$verif9 = $test->prepare("DELETE FROM `tableau` WHERE ID=?");
+			$verif9->execute(array($all['IDD2']));
+
 			echo 0;
 			return;
 		}
@@ -55,6 +61,12 @@
 
 			$verif7 = $test->prepare("UPDATE `partie` SET `FIN`=1 WHERE IDP=?");
 			$verif7->execute(array($partie));
+
+			$verif8 = $test->prepare("DELETE FROM `tableau` WHERE ID=?");
+			$verif8->execute(array($all['IDD1']));
+
+			$verif9 = $test->prepare("DELETE FROM `tableau` WHERE ID=?");
+			$verif9->execute(array($all['IDD2']));
 
 			echo 0;
 			return;

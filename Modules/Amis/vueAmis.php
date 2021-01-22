@@ -5,7 +5,7 @@
         }
 
         function listeCachée(){
-            if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')
+            if($_GET["module"]=="init")
                 echo "<a href='index.php?amis=show'><div id='listeC'></div></a>";
             else
                 echo "<a href='".$_SERVER['REQUEST_URI']."&amis=show'><div id='listeC'></div></a>";
@@ -17,12 +17,12 @@
                 echo "<p class='amis'>".$value[0]."</p>";
             }
             echo "</div>";
-            if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')
+            if($_GET["module"]=="init")
                 echo "<a href='index.php?amis=ajouter'><button id='ajoutA'>Ajouter un ami !</button></a>";
             else
                 echo "<a href='".$_SERVER['REQUEST_URI']."&amis=ajouter'><button id='ajoutA'>Ajouter un ami</button></a>";
             echo "</div>";
-            if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')
+            if($_GET["module"]=="init")
                 echo "<a href='index.php?amis=init'><div id='listeApparente'></div></a>";
             else
                 echo "<a href='".$_SERVER['REQUEST_URI']."&amis=init'><div id='listeApparente'></div></a>";
@@ -30,7 +30,7 @@
 
         function formAjout(){
             echo '<div id="listeAmis">';
-            if($_SERVER['REQUEST_URI']=='/EldersIslands/'||$_SERVER['REQUEST_URI']=='/EldersIslands/index.php')
+            if($_GET["module"]=="init")
                 echo "<form action='index.php?amis=valAjout' method='post'id='formAjout'>
                 <label for='pseudo'>Entrez le pseudo du joueur (il ne sera pas ajouté si le compte c'est pas créé) :</label><input type='text' name='pseudoAmi'><br>
                 <input type='submit' value='Ajoutez' id='ajoutA'>
