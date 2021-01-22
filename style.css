@@ -115,14 +115,14 @@
 	}
 
 	#Tchat{
-		background-color: white;
+		background: no-repeat url("Image/papierBrulé.jpg");
 		position: absolute;
 		left: 84.5%;
 		top: 65%;
 		border: 2px solid black;
 		width: 15%;
 		height: 30%;
-
+		text-align: center;
 	}
 
 	#carac{
@@ -506,6 +506,8 @@
 
 	.amis{
 		margin-left: 30px;
+		text-decoration: none;
+		color: black;
 	}
 
 	#ajoutA{
@@ -712,3 +714,5 @@
         width: 300px;
         font-size: 20px;
     }
+
+
